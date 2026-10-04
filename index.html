@@ -1,10 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gaming Tools Admin</title>
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.8.3/dist/decap-cms.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GamerToolsHub — gaming tools, wallpapers, PUBG codes and stylish gaming names.">
+  <title>GamerToolsHub — Gaming Tools & Hub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body></body>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark">GT</span><span>Gamer<span>ToolsHub</span></span></a>
+    <nav>
+      <a href="#games">Games</a>
+      <a href="#wallpapers">Wallpapers</a>
+      <a href="#tools">Tools</a>
+      <a href="#codes">Codes</a>
+      <a href="#names">Names</a>
+    </nav>
+    <a class="nav-btn" href="#tools">Explore Tools</a>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="eyebrow">🎮 YOUR GAMING HUB</div>
+        <h1>Level up your<br><span>gaming experience.</span></h1>
+        <p>Gaming guides, useful tools, wallpapers, PUBG code exchange and stylish gaming names — all in one clean hub.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#tools">Explore Tools <b>→</b></a>
+          <a class="ghost-btn" href="#wallpapers">View Wallpapers</a>
+        </div>
+        <div class="stats">
+          <div><strong>04+</strong><small>Gaming Sections</small></div>
+          <div><strong>100%</strong><small>Responsive</small></div>
+          <div><strong>24/7</strong><small>Online Hub</small></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="scanline"></div>
+        <div class="orb">🎮</div>
+        <div class="hero-card-title">GAMERTOOLS</div>
+        <div class="hero-card-sub">TOOLS • STYLE • COMMUNITY</div>
+        <div class="mini-grid">
+          <div>🎯<span>Settings</span></div>
+          <div>✨<span>Names</span></div>
+          <div>🖼️<span>Wallpapers</span></div>
+          <div>🔑<span>Codes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="games" class="section">
+      <div class="section-head"><div><span class="kicker">DISCOVER</span><h2>Game Center</h2></div><p>Quick access to your favorite gaming content.</p></div>
+      <div class="cards">
+        <article class="card featured"><div class="icon">🎯</div><h3>PUBG Mobile</h3><p>Settings, sensitivity guides, events, tips and useful gaming resources.</p><a href="#tools">Open Hub <span>→</span></a></article>
+        <article class="card"><div class="icon">🏎️</div><h3>GTA V</h3><p>Game information, guides, requirements and useful resources.</p><a href="#tools">Explore <span>→</span></a></article>
+        <article class="card"><div class="icon">⚡</div><h3>More Games</h3><p>Add Call of Duty, Free Fire, Fortnite or any other game later.</p><a href="#tools">Explore <span>→</span></a></article>
+      </div>
+    </section>
+
+    <section id="wallpapers" class="section alt">
+      <div class="section-head"><div><span class="kicker">VISUALS</span><h2>Gaming Wallpapers</h2></div><p>Search and showcase your own JPG/PNG wallpapers.</p></div>
+      <div class="search"><span>⌕</span><input id="wallSearch" placeholder="Search wallpapers..." aria-label="Search wallpapers"></div>
+      <div class="wall-grid" id="wallGrid">
+        <article class="wall" data-name="pubg battle"><div class="wall-art art1">BATTLE<br><b>ZONE</b></div><div class="wall-info"><b>PUBG Battle Theme</b><button>Preview</button></div></article>
+        <article class="wall" data-name="gaming neon"><div class="wall-art art2">NEON<br><b>GAMING</b></div><div class="wall-info"><b>Gaming Neon</b><button>Preview</button></div></article>
+        <article class="wall" data-name="dark gaming"><div class="wall-art art3">DARK<br><b>MODE</b></div><div class="wall-info"><b>Dark Gaming</b><button>Preview</button></div></article>
+      </div>
+      <p class="note">Replace the demo artwork with your own JPG/PNG files when you publish.</p>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="section-head"><div><span class="kicker">POWER UP</span><h2>Gaming Tools</h2></div><p>Useful mini-tools for your gaming community.</p></div>
+      <div class="tool-grid">
+        <article class="tool-card"><div class="tool-icon">🎯</div><h3>PUBG Sensitivity</h3><p>Organize camera, ADS, gyro and ADS gyro settings by device.</p><button class="tool-btn" onclick="showToast('Sensitivity tool section is ready for your settings.')">Open Tool</button></article>
+        <article class="tool-card"><div class="tool-icon">✨</div><h3>Name Generator</h3><p>Generate stylish gaming names, clan tags and symbols.</p><button class="tool-btn" onclick="generateName()">Generate Name</button></article>
+        <article class="tool-card"><div class="tool-icon">📊</div><h3>Gaming Calculator</h3><p>Add calculators for FPS, storage, sensitivity and other gaming needs.</p><button class="tool-btn" onclick="showToast('Calculator module ready to be customized.')">Open Tool</button></article>
+      </div>
+    </section>
+
+    <section id="codes" class="section alt">
+      <div class="section-head"><div><span class="kicker">COMMUNITY</span><h2>PUBG Code Exchange</h2></div><p>Save sample codes locally in the visitor's browser.</p></div>
+      <div class="code-box">
+        <input id="codeInput" placeholder="Enter PUBG code">
+        <input id="codeTitle" placeholder="Code title / description">
+        <button class="primary-btn" onclick="addCode()">Add Code</button>
+      </div>
+      <div id="codeList" class="code-list"></div>
+      <p class="note">For a public shared code database, connect a backend/database later.</p>
+    </section>
+
+    <section id="names" class="section">
+      <div class="section-head"><div><span class="kicker">STYLE</span><h2>Stylish Gaming Names</h2></div><p>Copy a name and customize it for your profile.</p></div>
+      <div class="name-box" id="nameBox"></div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">GT</span><span>Gamer<span>ToolsHub</span></span></div><p>© 2026 GamerToolsHub • Built for gamers</p><a href="#home">Back to top ↑</a></footer>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
 </html>
