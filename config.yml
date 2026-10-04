@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: mdanishop410/gaming-tools
   branch: main
 
 media_folder: "images/uploads"
