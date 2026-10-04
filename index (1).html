@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gaming Tools</title><script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+body{margin:0;background:#070912;color:#eef3ff;font-family:Arial,sans-serif}header{padding:22px 6%;border-bottom:1px solid #26304a;background:#0b1020}nav{float:right}nav a{color:#cdd6ee;margin:0 9px;text-decoration:none}.wrap{max-width:1100px;margin:auto;padding:55px 6%}.hero{text-align:center;padding:60px 0}.hero h1{font-size:58px;margin:15px 0}.hero span{color:#5ee7ff}.muted{color:#9aa7c2}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#101629;border:1px solid #27314c;border-radius:18px;padding:20px}.card img{width:100%;height:190px;object-fit:cover;border-radius:12px}.btn{display:inline-block;background:#7957ff;color:white;padding:10px 14px;border-radius:10px;text-decoration:none}.section{margin-top:55px}.pill{display:inline-block;padding:8px 12px;border-radius:99px;background:#171f38;color:#9ff6ff;margin:5px}@media(max-width:800px){.grid{grid-template-columns:1fr}.hero h1{font-size:40px}nav{float:none;margin-top:15px}}
+</style></head><body>
+<header><b>GAMING<span>TOOLS</span></b><nav><a href="#games">Games</a><a href="#wallpapers">Wallpapers</a><a href="#tools">Tools</a><a href="#codes">PUBG Codes</a><a href="#names">Names</a><a href="/admin/">Admin</a></nav></header>
+<div class="wrap"><section class="hero"><small>🎮 YOUR GAMING HUB</small><h1>Games. Tools. <span>Gaming Style.</span></h1><p class="muted">Game information, wallpapers, gaming tools and stylish gaming content.</p></section>
+<section id="games" class="section"><h2>🎮 Games</h2><div class="grid" id="gamesGrid"></div></section>
+<section id="wallpapers" class="section"><h2>🖼️ Wallpapers</h2><div class="grid" id="wallGrid"></div></section>
+<section id="tools" class="section"><h2>🛠️ Gaming Tools</h2><div class="grid" id="toolsGrid"></div></section>
+<section id="codes" class="section"><h2>🔄 PUBG Code Exchange</h2><div class="card"><p class="muted">Add your own community-code feature here later. Keep submissions moderated and only publish appropriate game-related codes.</p></div></section>
+<section id="names" class="section"><h2>✨ Stylish PUBG Names</h2><div id="namesList"></div></section></div>
+<footer style="text-align:center;padding:35px;color:#7f8ba6">© 2026 Gaming Tools</footer>
+<script>
+const esc=s=>String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+async function load(){try{const d=await fetch('/content/site.json?v='+Date.now()).then(r=>r.json());
+document.querySelector('#gamesGrid').innerHTML=d.games.map(x=>`<div class="card">${x.image?`<img src="${esc(x.image)}">`:''}<h3>${esc(x.title)}</h3><p class="muted">${esc(x.description)}</p></div>`).join('');
+document.querySelector('#wallGrid').innerHTML=d.wallpapers.map(x=>`<div class="card">${x.image?`<img src="${esc(x.image)}">`:''}<h3>${esc(x.title)}</h3>${x.download?`<a class="btn" href="${esc(x.download)}" download>Download</a>`:''}</div>`).join('');
+document.querySelector('#toolsGrid').innerHTML=d.tools.map(x=>`<div class="card"><h3>${esc(x.title)}</h3><p class="muted">${esc(x.description)}</p></div>`).join('');
+document.querySelector('#namesList').innerHTML=d.names.map(x=>`<span class="pill">${esc(x)}</span>`).join('');
+}catch(e){console.error(e)}}
+load();
+if(window.netlifyIdentity){window.netlifyIdentity.on("init",user=>{if(!user)window.netlifyIdentity.on("login",()=>location.href="/admin/");});}
+</script></body></html>

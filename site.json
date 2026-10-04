@@ -1,0 +1,42 @@
+{
+  "games": [
+    {
+      "title": "PUBG Mobile",
+      "description": "Guides, settings, updates and gaming information.",
+      "image": ""
+    },
+    {
+      "title": "GTA V",
+      "description": "Game details, guides and wallpapers.",
+      "image": ""
+    }
+  ],
+  "wallpapers": [
+    {
+      "title": "Gaming Wallpaper",
+      "image": "",
+      "download": ""
+    }
+  ],
+  "names": [
+    "亗 D A R K 亗",
+    "乂NIGHT乂",
+    "『ACE』",
+    "〆HUNTER",
+    "ツSNIPER"
+  ],
+  "tools": [
+    {
+      "title": "Sensitivity Guide",
+      "description": "Share gaming settings and tips."
+    },
+    {
+      "title": "Name Ideas",
+      "description": "Stylish gaming names and tags."
+    },
+    {
+      "title": "Gaming Calculator",
+      "description": "Add useful calculators and utilities."
+    }
+  ]
+}

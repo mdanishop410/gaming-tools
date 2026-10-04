@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - file: "content/site.json"
+        label: "Gaming Tools Content"
+        name: "content"
+        fields:
+          - label: "Games"
+            name: "games"
+            widget: "list"
+            fields:
+              - {label: "Game Name", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Game Image", name: "image", widget: "image", required: false}
+          - label: "Wallpapers"
+            name: "wallpapers"
+            widget: "list"
+            fields:
+              - {label: "Wallpaper Name", name: "title", widget: "string"}
+              - {label: "Wallpaper Image", name: "image", widget: "image"}
+              - {label: "Download URL", name: "download", widget: "string", required: false}
+          - label: "PUBG Names"
+            name: "names"
+            widget: "list"
+            field: {label: "Name", name: "name", widget: "string"}
+          - label: "Gaming Tools"
+            name: "tools"
+            widget: "list"
+            fields:
+              - {label: "Tool Name", name: "title", widget: "string"}
+              - {label: "Information", name: "description", widget: "text"}
